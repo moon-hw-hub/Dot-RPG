@@ -31,18 +31,22 @@ public class PlayerAction : MonoBehaviour
         bool vUp = Input.GetButtonUp("Vertical");
 
         // Check Horizontal Move
-        if (hDown)
+        if (hDown) // 만약 수평버튼을 눌렀다면
             isHorizonMove = true;
-        else if (vDown)
+        else if (vDown) // 만약 수직버튼을 눌렀다면
             isHorizonMove = false;
-        else if (hUp || vUp)
+        else if (hUp || vUp) // 수평버튼이나 수직버튼을 떼어도 여전히 수평 방향으로 입력이 들어오고 있다면 수평 이동 중이라고 판단하는 로직
             isHorizonMove = h != 0;
+        /*if (h != 0)
+            isHorizonMove = true;
+        else
+            isHorizonMove = false;*/
 
         // Animation
-        if (anim.GetInteger("hAxisRaw") != h)
+        if (anim.GetInteger("hAxisRaw") != h) // 현재 애니메이터에 저장된 수평 값(hAxisRaw)과 실제 입력값 h가 다르면
         {
-            anim.SetBool("isChange", true);
-            anim.SetInteger("hAxisRaw", (int)h);
+            anim.SetBool("isChange", true); // 애니메이션 상태 변경
+            anim.SetInteger("hAxisRaw", (int)h); // 애니메이터에 수평 값 업데이트
         }
         else if (anim.GetInteger("vAxisRaw") != v)
         {
@@ -50,7 +54,7 @@ public class PlayerAction : MonoBehaviour
             anim.SetInteger("vAxisRaw", (int)v);
         }
         else
-            anim.SetBool("isChange", false);
+            anim.SetBool("isChange", false); // 바뀌지 않았음
 
         //Direction
         if (vDown && v==1)
