@@ -21,14 +21,14 @@ public class PlayerAction : MonoBehaviour
     void Update()
     {
         // Move Value
-        h = Input.GetAxisRaw("Horizontal");
-        v = Input.GetAxisRaw("Vertical");
+        h = GameManager.instance.isAction ? 0 : Input.GetAxisRaw("Horizontal");
+        v = GameManager.instance.isAction ? 0 : Input.GetAxisRaw("Vertical");
 
         // Check Button Down or Up
-        bool hDown = Input.GetButtonDown("Horizontal");
-        bool vDown = Input.GetButtonDown("Vertical");
-        bool hUp = Input.GetButtonUp("Horizontal");
-        bool vUp = Input.GetButtonUp("Vertical");
+        bool hDown = GameManager.instance.isAction ? false : Input.GetButtonDown("Horizontal");
+        bool vDown = GameManager.instance.isAction ? false : Input.GetButtonDown("Vertical");
+        bool hUp = GameManager.instance.isAction ? false : Input.GetButtonUp("Horizontal");
+        bool vUp = GameManager.instance.isAction ? false : Input.GetButtonUp("Vertical");
 
         // Check Horizontal Move
         if (hDown) // 만약 수평버튼을 눌렀다면
@@ -66,9 +66,10 @@ public class PlayerAction : MonoBehaviour
         else if (hDown && h == 1)
             dirVec = Vector3.right;
 
-        // Scan Object
-        if(Input.GetButtonDown("Jump") && scanObject != null) 
-            Debug.Log("this is : " + scanObject.name);
+        // Scan Object & Action
+        if (Input.GetButtonDown("Jump") && scanObject != null) 
+            //Debug.Log("this is : " + scanObject.name);
+            GameManager.instance.Action(scanObject);
 
     }
 
