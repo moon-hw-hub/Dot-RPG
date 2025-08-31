@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 172058}
   - component: {fileID: 172057}
   - component: {fileID: 172056}
+  - component: {fileID: 172059}
   m_Layer: 0
   m_Name: Desk
   m_TagString: Untagged
@@ -253,6 +254,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &172059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b0735bb589497439ed75183ba75cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 200
+  isNpc: 0
 --- !u!1 &95721275
 GameObject:
   m_ObjectHideFlags: 0
@@ -8509,6 +8524,7 @@ GameObject:
   - component: {fileID: 2089909013}
   - component: {fileID: 2089909012}
   - component: {fileID: 2089909011}
+  - component: {fileID: 2089909014}
   m_Layer: 0
   m_Name: Box
   m_TagString: Untagged
@@ -8632,6 +8648,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2089909014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089909010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2b0735bb589497439ed75183ba75cbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 100
+  isNpc: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
